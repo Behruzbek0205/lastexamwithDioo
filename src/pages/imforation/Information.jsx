@@ -20,7 +20,7 @@ import exelent from "../../assets/exelent.svg";
 import user from "../../assets/user.svg";
 import man from "../../assets/man.svg";
 import opa from "../../assets/opa.svg";
-import stars from "../../assets/stars.svg";
+import stars from "../../assets/Stars.svg";
 import fullstart from "../../assets/fullstars.svg";
 import broken from "../../assets/broken.svg";
 import broken2 from "../../assets/broken2.svg";
