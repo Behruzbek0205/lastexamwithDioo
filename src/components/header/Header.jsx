@@ -5,9 +5,11 @@ import { TbUser } from "react-icons/tb";
 import { FaRegHeart, FaBars, FaTimes } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import Logo from "../../assets/Logo.png";
+import { useSelector } from "react-redux";
 
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
+  const liked = useSelector((state) => state.liked.value);
 
   return (
     <header className="max-w-[1440px] bg-white  relative">
@@ -17,11 +19,7 @@ const Header = () => {
         </Link>
         <div className="hidden lg:flex w-full max-w-[372px] h-12 items-center bg-[#F5F5F5] p-4 rounded-lg text-[#989898] text-[20px] gap-2 mx-6">
           <CiSearch />
-          <input
-            type="text"
-            placeholder="Search"
-            className="outline-none "
-          />
+          <input type="text" placeholder="Search" className="outline-none " />
         </div>
         <nav className="hidden lg:flex items-center gap-8 xl:gap-12 text-[#989898] font-medium ">
           <Link to="/">
@@ -39,12 +37,9 @@ const Header = () => {
         </nav>
 
         <div className="flex items-center gap-3 md:gap-4 lg:gap-6 ">
-          <Link
-            to="/liked"
-            className="relative"
-          >
+          <Link to="/liked" className="relative">
             <div className="w-4 h-4 rounded-full bg-red-600 absolute -top-2 left-4 text-[10px] flex items-center justify-center text-white font-semibold">
-              3
+              {liked.length}
             </div>
             <FaRegHeart className="text-xl md:text-2xl" />
           </Link>
@@ -59,8 +54,6 @@ const Header = () => {
             onClick={() => setMenuOpen(!menuOpen)}
             aria-label="Toggle menu"
           >
-
-
             {menuOpen ? <FaTimes /> : <FaBars />}
           </button>
         </div>
@@ -73,9 +66,6 @@ const Header = () => {
             placeholder="Search"
             className="outline-none w-full bg-transparent text-sm"
           />
-
-
-
         </div>
       </div>
       {menuOpen && (

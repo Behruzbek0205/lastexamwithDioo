@@ -9,10 +9,9 @@ export const userSlice = createSlice({
   initialState,
   reducers: {
     addUser: (state, action) => {
-      // ID qo'shish kerak bo'lsa
       const newUser = {
         ...action.payload,
-        id: Date.now().toString(), // yoki crypto.randomUUID()
+        id: Date.now().toString(),
       };
       state.value.push(newUser);
     },
@@ -20,8 +19,8 @@ export const userSlice = createSlice({
       state.value = state.value.filter((item) => item.id !== action.payload);
     },
     updateLogin: (state, action) => {
-      const { id, url, username, email } = action.payload; // id ni ham oling
-      const user = state.value.find((u) => u.id === id); // id ni ishlating
+      const { id, url, username, email } = action.payload;
+      const user = state.value.find((u) => u.id === id);
       if (user) {
         user.url = url;
         user.username = username;

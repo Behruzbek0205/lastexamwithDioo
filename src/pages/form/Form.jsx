@@ -21,7 +21,7 @@ const Form = ({ onLogin }) => {
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (!url || !email || !username || !password) {
+    if ( !email || !username || !password) {
       alert("Iltimos hamma joylani toldiring");
       return;
     }
@@ -60,6 +60,7 @@ const Form = ({ onLogin }) => {
                 placeholder="Enter url"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}
+                
                 className="w-full py-3 px-4 rounded-lg bg-white/20 placeholder-white/70 text-white"
               />
             </div>

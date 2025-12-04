@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
-import { Data, Dataa } from "../../alldata/data";
+import { Data } from "../../alldata/data";
 import { FaHeart, FaMobileScreen } from "react-icons/fa6";
 import { HiMiniCpuChip } from "react-icons/hi2";
 import { GoCpu } from "react-icons/go";
@@ -27,6 +27,7 @@ import broken2 from "../../assets/broken2.svg";
 import { Iphone } from "../../alldata/iphone";
 import { useDispatch } from "react-redux";
 import { addCart } from "../../redux/userCart";
+import { Dataaa } from "../../alldata/apple";
 
 const Information = () => {
   const { id } = useParams();
@@ -36,7 +37,7 @@ const Information = () => {
     dispatch(addCart(item));
   };
 
-  const dataFromDataa = Dataa.find((item) => item.id === Number(id));
+  const dataFromDataa = Dataaa.find((item) => item.id === Number(id));
   const dataFromData = Data.find((item) => item.id === Number(id));
 
   if (!dataFromDataa && !dataFromData) {
