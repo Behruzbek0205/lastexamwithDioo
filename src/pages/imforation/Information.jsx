@@ -25,13 +25,23 @@ import fullstart from "../../assets/fullstars.svg";
 import broken from "../../assets/broken.svg";
 import broken2 from "../../assets/broken2.svg";
 import { Iphone } from "../../alldata/iphone";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../../redux/userCart";
 import { Dataaa } from "../../alldata/apple";
+import { addLiked, deleteLiked } from "../../redux/likedRedux";
 
 const Information = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
+  const liked = useSelector((state) => state.liked.value);
+
+  const handleLike = (item) => {
+    if (liked.some((q) => q.id === item.id)) {
+      dispatch(deleteLiked(item.id));
+    } else {
+      dispatch(addLiked(item));
+    }
+  };
 
   const handleItem = (item) => {
     dispatch(addCart(item));
@@ -473,29 +483,37 @@ const Information = () => {
             Discounts up to -50%
           </h3>
         </div>
-        <div className="card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 mt-10 px-4 md:px-6">
+        <div className="w-full max-w-[1120px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {Iphone.map((item, index) => (
             <div
-              className="map w-full max-w-[268px] mx-auto h-auto sm:h-[432px] flex flex-col items-center justify-around rounded-[9px] bg-[#F6F6F6] py-6"
               key={index}
+              className="w-full bg-[#F6F6F6] rounded-[9px] p-4 flex flex-col items-center gap-4"
             >
-              <FaHeart className="text-2xl md:text-[29px] self-end mr-6 cursor-pointer transition-colors text-[#909090C4]" />
-
+              <div
+                className="w-full flex justify-end cursor-pointer text-[26px]"
+                onClick={() => handleLike(item)}
+              >
+                {liked.some((q) => q.id === item.id) ? (
+                  <FaHeart className="text-red-500" />
+                ) : (
+                  <FaHeart className="text-[#B5B5B5]" />
+                )}
+              </div>
               <Link to="/apple">
                 <img
                   src={item.image}
-                  alt="Image"
-                  className="w-full h-auto px-4"
+                  alt="iPhone"
+                  className="max-w-full h-40 sm:h-48 object-contain"
                 />
               </Link>
-              <p className="w-full max-w-[236px] text-center font-medium text-base md:text-[18px] px-4">
+              <p className="w-full text-center font-medium text-[16px] sm:text-[17px] md:text-[18px] px-2">
                 {item.text}
               </p>
-              <span className="text-xl md:text-[24px] font-semibold">
+              <span className="text-lg md:text-[22px] font-semibold">
                 ${item.price}
               </span>
               <Link to="/apple">
-                <button className="px-12 md:px-[65px] py-3 md:py-4 bg-[black] text-[white] rounded-lg text-sm md:text-base">
+                <button className="px-10 sm:px-12 py-3 bg-black text-white rounded-lg text-sm sm:text-base">
                   Buy Now
                 </button>
               </Link>

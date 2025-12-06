@@ -12,10 +12,10 @@ const Final = () => {
   return (
     <div className="w-full">
       <hr className="text-[#B5B5B5] w-full" />
-      <div className="main px-4 md:px-10 py-8 flex flex-col gap-12 max-w-[1521px] mx-auto">
+      <div className=" px-4 md:px-10 py-8 flex flex-col gap-12 max-w-[1521px] mx-auto">
         <div className="top flex flex-col md:flex-row items-center justify-between gap-6">
           <div className="adress flex items-center gap-3" >
-            <div className="w-10 h-10 bg-[#B2B2B2] text-white rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 bg-[#B2B2B2] text-white rounded-full flex items-center justify-center ">
               <CiLocationOn size={22} />
             </div>
             <div className="step text-[#B2B2B2]">
@@ -25,7 +25,7 @@ const Final = () => {
           </div>
 
           <div className="adress flex items-center gap-3">
-            <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 bg-black text-white rounded-full flex items-center justify-center ">
               <FaDollyFlatbed size={20} />
             </div>
             <div className="step text-black">
@@ -35,7 +35,7 @@ const Final = () => {
           </div>
 
           <div className="adress flex items-center gap-3">
-            <div className="w-10 h-10 bg-[#B2B2B2] text-white rounded-full flex items-center justify-center flex-shrink-0">
+            <div className="w-10 h-10 bg-[#B2B2B2] text-white rounded-full flex items-center justify-center ">
               <MdOutlinePayment size={20} />
             </div>
             <div className="step text-[#B2B2B2]">
@@ -45,7 +45,7 @@ const Final = () => {
           </div>
         </div>
 
-        <div className="payment3 flex flex-col lg:flex-row gap-8 lg:gap-24">
+        <div className="payment3 flex flex-col lg:flex-row gap-8 lg:gap-24 justify-center">
           <div className="summary w-full lg:w-128 h-auto border border-[#EBEBEB] rounded-[10px] px-6 py-8">
             <h1 className="font-medium inter text-[20px]">Summary</h1>
             <div className="card flex flex-col gap-4 mt-4">

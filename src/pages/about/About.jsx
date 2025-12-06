@@ -13,39 +13,51 @@ const About = () => {
   };
 
   return (
-    <div>
-      <hr className="text-[#B5B5B5] w-[1521px]" />
-      <div className="main">
-        <div className="top">
-          <div className="grid grid-cols-7 w-[1210px] text-[#ACACAC] font-semibold px-4">
-            <p>Url</p>
-            <p>Name</p>
-            <p>Email</p>
-          </div>
+    <div className="w-full pb-10">
+      <div className="container mx-auto px-4 md:px-6 lg:px-8 ">
+        <div className="hidden md:grid grid-cols-12 gap-4 text-[#ACACAC] font-semibold px-4 mb-4 border-b pb-2">
+          <p className="col-span-2 lg:col-span-1">Image</p>
+          <p className="col-span-4 lg:col-span-4">Name</p>
+          <p className="col-span-4 lg:col-span-5">Email</p>
+          <p className="col-span-2 text-right">Actions</p>
         </div>
-        <div className="max-w-[1240px] mt-6 flex flex-col gap-14">
+
+        <div className="flex flex-col gap-4 md:gap-6">
           {user.map((item) => (
             <div
               key={item.id}
-              className="grid grid-cols-7 items-center bg-[#F6F6F6] border p-3 rounded-lg w-[1210px]"
+              className="bg-[#F6F6F6] border border-gray-200 p-4 rounded-xl flex flex-col items-center text-center md:grid md:grid-cols-12 md:text-left md:items-center md:gap-4"
             >
-              <div>
+              <div className="md:col-span-2 lg:col-span-1 mb-3 md:mb-0">
                 <img
                   src={item.url}
                   alt={item.username}
-                  className="w-[60px] h-[60px] object-cover rounded"
+                  className="w-20 h-20 md:w-[60px] md:h-[60px] object-cover rounded-full md:rounded-lg   bg-white"
                 />
               </div>
-              <p>{item.username}</p>
-              <p>{item.email}</p>
-              <div className="flex justify-end gap-4 text-xl text-[black] col-span-4">
+              <div className="md:col-span-4 lg:col-span-4 w-full mb-2 md:mb-0">
+                <span className="md:hidden text-xs text-gray-400  font-bold block mb-1">
+                  Name
+                </span>
+                <p className="font-medium text-gray-800 text-lg md:text-base">
+                  {item.username}
+                </p>
+              </div>
+              <div className="md:col-span-4 lg:col-span-5 w-full mb-4 md:mb-0 ">
+                <span className="md:hidden text-xs text-gray-400  font-bold block mb-1">
+                  Email
+                </span>
+                <p className="text-gray-600" title={item.email}>
+                  {item.email}
+                </p>
+              </div>
+              <div className="md:col-span-2 w-full flex justify-center md:justify-end gap-6 md:gap-4 text-2xl md:text-xl text-gray-700  md:border-none pt-3 md:pt-0 mt-2 md:mt-0">
                 <Link to={`/update/${item.id}`}>
-                  <GrEdit className="cursor-pointer hover:text-blue-600 transition" />
+                  <GrEdit className="cursor-pointer hover:text-blue-600 hover:scale-110 transition-transform" />
                 </Link>
-                <AiOutlineDelete
-                  onClick={() => del(item.id)}
-                  className="cursor-pointer hover:text-red-600 transition"
-                />
+                <button onClick={() => del(item.id)}>
+                  <AiOutlineDelete className="cursor-pointer hover:text-red-600 hover:scale-110 transition-transform" />
+                </button>
               </div>
             </div>
           ))}
