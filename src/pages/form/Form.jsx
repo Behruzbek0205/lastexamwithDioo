@@ -56,7 +56,7 @@ const Form = ({ onLogin }) => {
                 Url
               </label>
               <input
-                type="url"
+                type="text"
                 placeholder="Enter url"
                 value={url}
                 onChange={(e) => setUrl(e.target.value)}

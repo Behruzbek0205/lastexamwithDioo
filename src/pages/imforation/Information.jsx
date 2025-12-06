@@ -65,20 +65,28 @@ const Information = () => {
     <div className="">
       <hr className="text-[#B5B5B5] w-full" />
       <div className="top">
-        <div className="text flex gap-2 ml-20 md:gap-4 items-center py-6 md:py-11 text-[#A4A4A4] text-sm md:text-[18px] font-medium inter overflow-x-auto">
-          <span>Home</span>
+        <div className="text flex gap-2 ml-4 md:ml-20 md:gap-4 items-center py-6 md:py-11 text-[#A4A4A4] text-sm md:text-[18px] font-medium inter overflow-x-auto">
+          <Link to="/" className="hover:underline">
+            Home
+          </Link>
           <IoIosArrowForward />
-          <span>Catolog</span>
+          <Link to="/catalog" className="hover:underline">
+            Catalog
+          </Link>
           <IoIosArrowForward />
-          <span>Smartphones</span>
+          <Link to="/catalog/smartphones" className="hover:underline">
+            Smartphones
+          </Link>
           <IoIosArrowForward />
-          <span>Apple</span>
+          <Link to="/catalog/smartphones/apple" className="hover:underline">
+            Apple
+          </Link>
           <IoIosArrowForward />
-          <span className="text-[black]">{data.text}</span>
+          <span className="text-black font-semibold">{data.text}</span>
         </div>
       </div>
 
-      <div className="main flex flex-col lg:flex-row items-start justify-center gap-6 lg:gap-12">
+      <div className="flex flex-col lg:flex-row items-start justify-center gap-6 lg:gap-12">
         <div className="image w-full lg:w-auto">
           <img
             src={data.image}
@@ -303,7 +311,7 @@ const Information = () => {
         </div>
       </div>
 
-      <div className="reviews w-full max-w-[1320px] mx-auto">
+      <div className="reviews w-full max-w-[1320px] mx-auto hidden md:block">
         <div className="rev_top px-6 md:px-12 py-8 md:py-12">
           <h1 className="font-medium inter text-xl md:text-[24px]">Reviews</h1>
           <div className="mark flex flex-col lg:flex-row gap-8 lg:gap-35 mt-6">
@@ -414,7 +422,7 @@ const Information = () => {
 
         <div className="commet px-4 md:px-6 py-6">
           <div className="top flex items-start gap-3">
-            <img src={man} alt="man" className="w-12 h-12 md:w-16 md:h-16 " />
+            <img src={man} alt="man" className="w-12 h-12 md:w-16 md:h-16" />
             <div className="flxx flex flex-col sm:flex-row justify-between w-full gap-2">
               <h3 className="font-bold inter text-base md:text-[17px]">
                 Ronald Richards

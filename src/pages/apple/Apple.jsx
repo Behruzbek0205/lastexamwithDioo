@@ -1,10 +1,5 @@
 import React from "react";
-import {
-  IoIosArrowForward,
-  IoIosArrowUp,
-  IoIosArrowDown,
-  IoIosArrowBack,
-} from "react-icons/io";
+import { IoIosArrowForward,IoIosArrowUp, IoIosArrowDown, IoIosArrowBack,} from "react-icons/io";
 import { CiSearch } from "react-icons/ci";
 import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
@@ -27,8 +22,6 @@ const Apple = () => {
   return (
     <div className="px-4 sm:px-6 lg:px-8 py-6">
       <hr className="border-[#B5B5B5]" />
-
-      {/* Breadcrumb */}
       <div className="w-full max-w-[1120px] mx-auto">
         <div className="flex items-center gap-2 text-sm md:text-[16px] text-[#A4A4A4] py-4 overflow-x-auto">
           <span>Home</span>
@@ -38,18 +31,13 @@ const Apple = () => {
           <span className="text-black font-medium">Smartphones</span>
         </div>
       </div>
-
-      {/* Main content */}
       <div className="w-full max-w-[1120px] mx-auto flex flex-col lg:flex-row gap-6 lg:gap-8">
-        {/* Sidebar */}
         <div className="w-full lg:w-[256px] ">
           <div className="flex items-center justify-between">
             <h3 className="font-medium text-base md:text-[18px]">Brand</h3>
             <IoIosArrowUp className="text-[18px]" />
           </div>
           <hr className="border-[#B5B5B5]" />
-
-          {/* Search */}
           <div className="w-full h-10 bg-[#F5F5F5] flex gap-2.5 px-4 items-center mt-4 rounded-md text-[#656565]">
             <CiSearch className="text-[16px]" />
             <input
@@ -58,8 +46,6 @@ const Apple = () => {
               className="outline-none bg-transparent flex-1"
             />
           </div>
-
-          {/* Brand checkboxes */}
           <div className="mt-4 flex flex-col gap-2 max-h-[400px] overflow-y-auto px-1">
             <div className="flex items-center gap-2 text-sm md:text-[16px] font-medium">
               <input type="checkbox" className="pt-0.5" /> Apple
@@ -98,8 +84,6 @@ const Apple = () => {
               <span className="text-xs md:text-[12px] text-[#656565]">35</span>
             </div>
           </div>
-
-          {/* Other filters */}
           <div className="mt-6 flex flex-col gap-4">
             <div className="flex items-center justify-between">
               <h3 className="font-medium text-base md:text-[18px]">
@@ -138,8 +122,6 @@ const Apple = () => {
             <hr className="border-[#B5B5B5]" />
           </div>
         </div>
-
-        {/* Products */}
         <div className="flex-1 mt-4 md:mt-0">
           <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 mb-6">
             <h3 className="text-[#6C6C6C] font-medium text-sm md:text-[16px]">
@@ -197,8 +179,6 @@ const Apple = () => {
           </div>
         </div>
       </div>
-
-      {/* Pagination */}
       <div className="flex items-center justify-center gap-3 mt-7 mb-8">
         <IoIosArrowBack className="text-lg md:text-[22px] cursor-pointer" />
         <span className="w-8 h-8 rounded flex items-center justify-center bg-black text-white cursor-pointer">
