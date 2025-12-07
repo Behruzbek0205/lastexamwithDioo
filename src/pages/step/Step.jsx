@@ -111,12 +111,12 @@ const Step = () => {
           <img src={line} alt="" className="w-full max-w-full object-cover" />
         </div>
         <div className="btn flex flex-col-reverse sm:flex-row justify-end gap-3 mt-10">
-          <button className="w-full sm:w-auto border border-gray-300 rounded-md px-8 py-3 md:px-16 md:py-4 hover:bg-gray-100 transition-colors text-sm md:text-base">
+          <button className="w-full sm:w-auto border border-gray-300 rounded-md px-8 py-3 md:px-16 md:py-4 ">
             Back
           </button>
 
           <Link to="/location" className="w-full sm:w-auto">
-            <button className="w-full sm:w-auto px-8 py-3 md:px-16 md:py-4 bg-black rounded-md text-white hover:bg-gray-800 transition-colors text-sm md:text-base">
+            <button className="w-full sm:w-auto px-8 py-3 md:px-16 md:py-4 bg-black rounded-md text-white ">
               Next
             </button>
           </Link>

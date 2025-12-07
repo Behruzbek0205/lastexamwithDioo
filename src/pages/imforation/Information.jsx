@@ -485,7 +485,7 @@ const Information = () => {
         </div>
       </div>
 
-      <div className="main mb-12">
+      <div className=" mb-12">
         <div className="text px-4 md:px-6">
           <h3 className="font-medium text-xl md:text-[24px]">
             Discounts up to -50%

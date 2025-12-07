@@ -76,7 +76,7 @@ const Location = () => {
                 Get your delivery as soon as possible
               </p>
 
-              <h4 className="sm:ml-auto font-medium text-black text-sm md:text-base whitespace-nowrap mt-2 sm:mt-0">
+              <h4 className="sm:ml-auto font-medium text-black text-sm md:text-base  mt-2 sm:mt-0">
                 1 Oct, 2023
               </h4>
             </label>
