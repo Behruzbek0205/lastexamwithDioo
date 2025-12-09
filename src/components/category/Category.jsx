@@ -9,7 +9,7 @@ import Smart from "../../assets/Smart.svg";
 
 const Category = () => {
   return (
-    <div className="px-4 md:px-6 lg:px-20 py-8">
+    <div className="px-4 md:px-6 lg:px-20 py-8 max-w-[1521px]">
       <div className="w-full max-w-[1120px] mx-auto flex items-center justify-between">
         <h1 className="text-lg md:text-[24px] font-medium">
           Browse By Category

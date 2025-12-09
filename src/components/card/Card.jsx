@@ -18,7 +18,7 @@ const Card = () => {
   };
 
   return (
-    <div className="w-full px-14 md:px-6 lg:px-20 py-8">
+    <div className="w-full max-w-[1521px] px-14 md:px-6 lg:px-20 py-8">
       <div className="text-base md:text-[18px] font-medium text-black flex flex-wrap gap-4 ml-30 md:gap-8 mb-6 md:mb-8">
         <span className="underline">New Arrival</span>
         <span className="text-[#8B8B8B]">Bestseller</span>

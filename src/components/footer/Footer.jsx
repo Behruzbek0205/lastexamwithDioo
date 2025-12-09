@@ -7,7 +7,7 @@ import Logo from "../../assets/logo2.png";
 
 const Footer = () => {
   return (
-    <footer className="bg-black w-full">
+    <footer className="bg-black w-full max-w-[1521px]">
       <div className="text flex flex-col lg:flex-row text-white px-4 md:px-6 lg:px-20 xl:px-40 py-12 md:py-16 lg:py-[104px] justify-between gap-8 lg:gap-12">
         <div className="left w-full lg:w-auto lg:max-w-[384px]">
           <img

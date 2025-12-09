@@ -18,7 +18,7 @@ const Map = () => {
   };
 
   return (
-    <div className="w-full px-4 md:px-6 lg:px-20 py-8">
+    <div className="max-w-[1521px] w-full px-4 md:px-6 lg:px-20 py-8">
       <div className="mb-6 md:mb-10">
         <h3 className="font-medium text-xl md:text-[24px] ml-30">
           Discounts up to -50%

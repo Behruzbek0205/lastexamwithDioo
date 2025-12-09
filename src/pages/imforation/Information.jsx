@@ -82,7 +82,7 @@ const Information = () => {
             Apple
           </Link>
           <IoIosArrowForward />
-          <span className="text-black font-semibold">{data.text}</span>
+          <span className="text-black font-semibold">Iphone</span>
         </div>
       </div>
 
