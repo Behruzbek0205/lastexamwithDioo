@@ -31,7 +31,7 @@ const Card = () => {
             className="w-full bg-[#F6F6F6] rounded-[9px] p-4 flex flex-col items-center gap-4"
           >
             <div
-              className="w-full flex justify-end cursor-pointer"
+              className="w-full flex justify-end cursor-pointer "
               onClick={() => handleLike(item)}
             >
               {liked.some((q) => q.id === item.id) ? (
@@ -54,7 +54,12 @@ const Card = () => {
               ${item.price}
             </span>
             <Link to="/gadjets">
-              <button className="px-10 sm:px-12 py-3 bg-black text-white rounded-lg text-sm sm:text-base">
+              <button className="px-15 sm:px-14 py-3 
+    bg-black text-white rounded-lg 
+       text-sm sm:text-base 
+      transition-all duration-300 
+  hover:bg-[#EDEDED] hover:text-black 
+hover:-translate-y-1 hover:shadow-xl">
                 Buy Now
               </button>
             </Link>

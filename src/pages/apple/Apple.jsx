@@ -170,9 +170,14 @@ const Apple = () => {
                 </span>
 
                 <Link to={`/information/${item.id}`}>
-                  <button className="px-12 md:px-[65px] py-3 md:py-4 bg-black text-white rounded-lg">
-                    Buy Now
-                  </button>
+                            <button className="px-15 sm:px-14 py-3 
+    bg-black text-white rounded-lg 
+       text-sm sm:text-base 
+      transition-all duration-300 
+  hover:bg-[#EDEDED] hover:text-black 
+hover:-translate-y-1 hover:shadow-xl">
+                Buy Now
+              </button>
                 </Link>
               </div>
             ))}

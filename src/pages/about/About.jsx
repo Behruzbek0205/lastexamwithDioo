@@ -1,4 +1,4 @@
-import { AiOutlineDelete } from "react-icons/ai";
+import { AiOutlineDelete, AiOutlineMail, AiOutlineUser } from "react-icons/ai";
 import { GrEdit } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
@@ -9,59 +9,60 @@ const About = () => {
   const dispatch = useDispatch();
 
   const del = (id) => {
-    dispatch(deleteUser(id));
+    if (window.confirm("Haqiqatan ham ushbu foydalanuvchini o'chirmoqchimisiz?")) {
+      dispatch(deleteUser(id));
+    }
   };
 
   return (
-    <div className="w-full pb-10">
-      <div className="container mx-auto px-4 md:px-6 lg:px-8 ">
-        <div className="hidden md:grid grid-cols-12 gap-4 text-[#ACACAC] font-semibold px-4 mb-4 border-b pb-2">
-          <p className="col-span-2 lg:col-span-1">Image</p>
-          <p className="col-span-4 lg:col-span-4">Name</p>
-          <p className="col-span-4 lg:col-span-5">Email</p>
-          <p className="col-span-2 text-right">Actions</p>
-        </div>
-
-        <div className="flex flex-col gap-4 md:gap-6">
-          {user.map((item) => (
+    <div className=" bg-[#F5F5F5] py-16 px-4 flex justify-center">
+      <div className="flex flex-wrap justify-center gap-10 max-w-5xl">
+        {user.length > 0 ? (
+          user.map((item) => (
             <div
               key={item.id}
-              className="bg-[#F6F6F6] border border-gray-200 p-4 rounded-xl flex flex-col items-center text-center md:grid md:grid-cols-12 md:text-left md:items-center md:gap-4"
+              className="w-[320px] bg-white rounded-3xl shadow-lg p-8 flex flex-col items-center text-center"
             >
-              <div className="md:col-span-2 lg:col-span-1 mb-3 md:mb-0">
-                <img
-                  src={item.url}
-                  alt={item.username}
-                  className="w-20 h-20 md:w-[60px] md:h-[60px] object-cover rounded-full md:rounded-lg   bg-white"
-                />
+              <img
+                src={
+                  item.url ||
+                  "https://cdn-icons-png.flaticon.com/512/3135/3135715.png"
+                }
+                alt={item.username}
+                className="w-28 h-28 rounded-full object-cover mb-6"
+              />
+              <h3 className="text-2xl font-bold text-gray-800 mb-2">
+                {item.username}
+              </h3>
+              <div className="flex items-center justify-center text-gray-600 mb-8">
+                <AiOutlineMail className="mr-2" />
+                <span className="text-sm break-all">{item.email}</span>
               </div>
-              <div className="md:col-span-4 lg:col-span-4 w-full mb-2 md:mb-0">
-                <span className="md:hidden text-xs text-gray-400  font-bold block mb-1">
-                  Name
-                </span>
-                <p className="font-medium text-gray-800 text-lg md:text-base">
-                  {item.username}
-                </p>
-              </div>
-              <div className="md:col-span-4 lg:col-span-5 w-full mb-4 md:mb-0 ">
-                <span className="md:hidden text-xs text-gray-400  font-bold block mb-1">
-                  Email
-                </span>
-                <p className="text-gray-600" title={item.email}>
-                  {item.email}
-                </p>
-              </div>
-              <div className="md:col-span-2 w-full flex justify-center md:justify-end gap-6 md:gap-4 text-2xl md:text-xl text-gray-700  md:border-none pt-3 md:pt-0 mt-2 md:mt-0">
-                <Link to={`/update/${item.id}`}>
-                  <GrEdit className="cursor-pointer hover:text-blue-600 hover:scale-110 transition-transform" />
+              <div className="flex gap-4 w-full">
+                <Link
+                  to={`/update/${item.id}`}
+                  className="flex-1 py-3 rounded-xl bg-gray-100 text-blue-600 font-semibold"
+                >
+                  <GrEdit className="inline mr-2" size={14} />
+                  Edit
                 </Link>
-                <button onClick={() => del(item.id)}>
-                  <AiOutlineDelete className="cursor-pointer hover:text-red-600 hover:scale-110 transition-transform" />
+
+                <button
+                  onClick={() => del(item.id)}
+                  className="flex-1 py-3 rounded-xl bg-gray-100 text-red-500 font-semibold"
+                >
+                  <AiOutlineDelete className="inline mr-2" size={14} />
+                  Delete
                 </button>
               </div>
             </div>
-          ))}
-        </div>
+          ))
+        ) : (
+          <div className="flex flex-col items-center opacity-40 mt-20">
+            <AiOutlineUser size={70} />
+            <p className="text-lg font-bold">Ma'lumot topilmadi</p>
+          </div>
+        )}
       </div>
     </div>
   );

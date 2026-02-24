@@ -14,6 +14,8 @@ import Form from "./pages/form/Form";
 import Liked from "./pages/liked/Liked";
 import Step from "./pages/step/Step";
 import Update from "./pages/update/Update";
+import AdminLog from "./pages/adminLog/AdminLog";
+import Admin from "./pages/adminLogin/Admin";
 
 const App = () => {
   const [ulanish, setUlanish] = useState(false);
@@ -35,8 +37,11 @@ const App = () => {
         <Route path="/about" element={<About />} />
         <Route path="/form" element={<Form />} />
         <Route path="/step" element={<Step />} />
-        <Route path="/liked" element={<Liked/>}/>
+        <Route path="/liked" element={<Liked />} />
         <Route path="/update/:id" element={<Update />} />
+        <Route path="/adminLog" element={<AdminLog />} />
+        <Route path="/admin" element={<Admin />} />
+
       </Routes>
       <Footer />
     </div>

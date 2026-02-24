@@ -58,7 +58,7 @@ const Games = () => {
               The new 15‑inch MacBook Air makes room for more of what you love
               with a spacious Liquid Retina display.
             </p>
-            <button className="border border-[black] rounded-md px-[50px] sm:px-[65px] py-3 sm:py-4 mt-6 text-[16px] sm:text-[18px] font-medium">
+            <button className="border border-[black] rounded-md px-[50px] sm:px-[65px] py-3 sm:py-4 mt-6 text-[16px] sm:text-[18px] font-medium  hover:bg-black hover:text-white transition-colors">
               Shop Now
             </button>
           </div>

@@ -23,7 +23,7 @@ const Category = () => {
         className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-3 lg:grid-cols-6  gap-3 md:gap-4  w-full max-w-[1120px] mx-auto mt-6 md:mt-8 bg-[#FAFAFA] p-2 sm:p-3 md:p-0 md:bg-transparent
       "
       >
-        <div className="card w-full h-28 sm:h-32 bg-[#EDEDED] rounded-[15px] flex flex-col items-center justify-center font-medium text-sm md:text-[16px] gap-1.5">
+        <div className="card w-full h-28 sm:h-32 bg-[#EDEDED] rounded-[15px] flex flex-col items-center justify-center font-medium text-sm md:text-[16px] gap-1.5 ">
           <img src={Phone} alt="phone" className="w-10 h-10 md:w-12 md:h-12" />
           Phones
         </div>

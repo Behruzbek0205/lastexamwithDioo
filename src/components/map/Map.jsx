@@ -54,7 +54,12 @@ const Map = () => {
               ${item.price}
             </span>
             <Link to="/apple">
-              <button className="px-10 sm:px-12 py-3 bg-black text-white rounded-lg text-sm sm:text-base">
+              <button className="px-15 sm:px-14 py-3 
+    bg-black text-white rounded-lg 
+       text-sm sm:text-base 
+      transition-all duration-300 
+  hover:bg-[#EDEDED] hover:text-black 
+hover:-translate-y-1 hover:shadow-xl">
                 Buy Now
               </button>
             </Link>

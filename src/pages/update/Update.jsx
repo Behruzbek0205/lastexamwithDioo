@@ -17,9 +17,9 @@ const Update = () => {
 
   useEffect(() => {
     if (user) {
-      setUrl(user.url);
-      setEmail(user.email);
-      setUsername(user.username);
+      setUrl(user.url || "");
+      setEmail(user.email || "");
+      setUsername(user.username || "");
     }
   }, [user]);
 
@@ -33,66 +33,62 @@ const Update = () => {
         email,
       })
     );
-    navigate("/");
+    navigate("/about");
   };
 
   return (
-    <div>
-      <hr className="text-[#B5B5B5] w-full" />
-      <div className="flex items-center justify-center inter text-xl sm:text-2xl mt-10">
-        Update page
-      </div>
+    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-indigo-100 flex items-center justify-center px-4">
+      <div className="w-full max-w-lg bg-white rounded-3xl shadow-2xl p-10">
+        <h2 className="text-3xl font-bold text-center text-gray-800 mb-8">
+          Update Profile
+        </h2>
 
-      <div className="form mt-10 sm:mt-20 md:mt-30 flex justify-center px-4 my-30">
-        <div className="input w-full sm:w-[500px] md:w-[600px] lg:w-[700px] rounded-xl border p-4">
-          <form
-            className="px-4 sm:px-10 py-5 flex flex-col gap-5"
-            onSubmit={handleUpdate}
+        <form className="flex flex-col gap-6" onSubmit={handleUpdate}>
+          <div className="flex flex-col">
+            <label className="text-sm font-semibold text-gray-600 mb-2">
+              New URL
+            </label>
+            <input
+              type="url"
+              placeholder="Enter new url"
+              value={url}
+              onChange={(e) => setUrl(e.target.value)}
+              className="px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label className="text-sm font-semibold text-gray-600 mb-2">
+              New Email
+            </label>
+            <input
+              type="email"
+              placeholder="Enter new email"
+              value={email}
+              onChange={(e) => setEmail(e.target.value)}
+              className="px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+            />
+          </div>
+          <div className="flex flex-col">
+            <label className="text-sm font-semibold text-gray-600 mb-2">
+              New Username
+            </label>
+            <input
+              type="text"
+              placeholder="Enter new username"
+              value={username}
+              onChange={(e) => setUsername(e.target.value)}
+              className="px-4 py-3 rounded-xl border border-gray-300 focus:outline-none focus:ring-2 focus:ring-blue-400 transition"
+            />
+          </div>
+
+          <button
+            type="submit"
+            className="mt-4 bg-blue-600 hover:bg-blue-700 text-white py-3 rounded-xl font-semibold text-lg transition-all duration-300 shadow-md hover:shadow-lg"
           >
-            <div className="flex flex-col gap-1">
-              <label className="flex items-center justify-center inter font-medium text-sm sm:text-base">
-                New Url
-              </label>
-              <input
-                type="url"
-                placeholder="New Url"
-                value={url}
-                className="border px-3 py-2 rounded-2xl outline-none text-sm sm:text-base"
-                onChange={(e) => setUrl(e.target.value)}
-              />
-            </div>
-            <div className="flex flex-col gap-1">
-              <label className="flex items-center justify-center inter font-medium text-sm sm:text-base">
-                New email
-              </label>
-              <input
-                type="email"
-                placeholder="New email"
-                value={email}
-                className="border px-3 py-2 rounded-2xl outline-none text-sm sm:text-base"
-                onChange={(e) => setEmail(e.target.value)}
-              />
-            </div>
-            <div className="flex flex-col gap-1">
-              <label className="flex items-center justify-center inter font-medium text-sm sm:text-base">
-                New username
-              </label>
-              <input
-                type="text"
-                placeholder="New username"
-                value={username}
-                className="border px-3 py-2 rounded-2xl outline-none text-sm sm:text-base"
-                onChange={(e) => setUsername(e.target.value)}
-              />
-            </div>
-            <button
-              type="submit"
-              className="bg-blue-500 text-white py-2 sm:py-3 rounded-2xl text-sm sm:text-base"
-            >
-              Submit
-            </button>
-          </form>
-        </div>
+            Save Changes
+          </button>
+
+        </form>
       </div>
     </div>
   );

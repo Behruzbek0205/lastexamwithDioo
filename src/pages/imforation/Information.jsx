@@ -1,4 +1,3 @@
-import React, { useState } from "react";
 import { IoIosArrowDown, IoIosArrowForward } from "react-icons/io";
 import { Link, useParams } from "react-router-dom";
 import { Data } from "../../alldata/data";
@@ -487,9 +486,9 @@ const Information = () => {
 
       <div className=" mb-12">
         <div className="text px-4 md:px-6">
-          <h3 className="font-medium text-xl md:text-[24px]">
+          <center><h3 className="font-medium text-xl md:text-[24px] my-10">
             Discounts up to -50%
-          </h3>
+          </h3></center>
         </div>
         <div className="w-full max-w-[1120px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
           {Iphone.map((item, index) => (
@@ -521,7 +520,12 @@ const Information = () => {
                 ${item.price}
               </span>
               <Link to="/apple">
-                <button className="px-10 sm:px-12 py-3 bg-black text-white rounded-lg text-sm sm:text-base">
+                <button className="px-15 sm:px-14 py-3 
+    bg-black text-white rounded-lg 
+       text-sm sm:text-base 
+      transition-all duration-300 
+  hover:bg-[#EDEDED] hover:text-black 
+hover:-translate-y-1 hover:shadow-xl">
                   Buy Now
                 </button>
               </Link>

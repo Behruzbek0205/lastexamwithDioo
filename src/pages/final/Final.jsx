@@ -4,6 +4,7 @@ import { FaDollyFlatbed } from "react-icons/fa";
 import { MdOutlinePayment } from "react-icons/md";
 import { useSelector } from "react-redux";
 import card from "../../assets/card.svg";
+import { Link } from "react-router-dom";
 
 const Final = () => {
   const cart = useSelector((state) => state.cart.value);
@@ -143,16 +144,17 @@ const Final = () => {
               <button className="border rounded-md px-8 sm:px-[113px] py-4 w-full sm:w-auto">
                 Back
               </button>
-              <button
-                className="px-8 sm:px-[113px] py-4 bg-[black] rounded-md text-[white] w-full sm:w-auto"
-                onClick={() =>
-                  alert(
-                    "Thank my teacher, for bringing me to this level:                                   Your student Bexruz"
-                  )
-                }
-              >
-                Pay
-              </button>
+              <Link to="/">
+                <button
+                  className="px-8 sm:px-[113px] py-4 bg-[black] rounded-md text-[white] w-full sm:w-auto"
+                // onClick={() =>
+                //   alert(
+                //     "Thank my teacher, for bringing me to this level:                                   Your student Bexruz"
+                //   )
+                // }
+                >
+                  Pay
+                </button></Link>
             </div>
           </div>
         </div>

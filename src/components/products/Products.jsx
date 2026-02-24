@@ -17,7 +17,7 @@ const Products = () => {
               iPad combines a magnificent 10.2-inch Retina display, incredible
               performance, multitasking and ease of use.
             </p>
-            <button className="px-10 md:px-14 py-3 md:py-4 border border-black rounded-md mt-4 ">
+            <button className="px-10 md:px-14 py-3 md:py-4 border border-black rounded-md mt-4  hover:bg-black hover:text-white transition-colors">
               Shop Now
             </button>
           </div>
@@ -31,7 +31,7 @@ const Products = () => {
               iPad combines a magnificent 10.2-inch Retina display, incredible
               performance, multitasking and ease of use.
             </p>
-            <button className="px-10 md:px-14 py-3 md:py-4 border border-black rounded-md mt-4">
+            <button className="px-10 md:px-14 py-3 md:py-4 border border-black rounded-md mt-4  hover:bg-black hover:text-white transition-colors">
               Shop Now
             </button>
           </div>
@@ -45,7 +45,7 @@ const Products = () => {
               iPad combines a magnificent 10.2-inch Retina display, incredible
               performance, multitasking and ease of use.
             </p>
-            <button className="px-10 md:px-14 py-3 md:py-4 border border-black rounded-md mt-4">
+            <button className="px-10 md:px-14 py-3 md:py-4 border border-black rounded-md mt-4 hover:bg-black hover:text-white transition-colors">
               Shop Now
             </button>
           </div>

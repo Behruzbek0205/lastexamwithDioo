@@ -15,7 +15,7 @@ const Iphone = () => {
           <p className="text-sm md:text-base lg:text-[18px] font-medium text-[#909090] mb-8 max-w-md mx-auto lg:mx-0">
             Created to change everything for the better. For everyone
           </p>
-          <button className="border-2 border-white rounded-md px-12 md:px-16 lg:px-[65px] py-3 md:py-4 font-medium md:text-base">
+          <button className="border-2 border-white rounded-md px-12 md:px-16 lg:px-[65px] py-3 md:py-4 font-medium md:text-base hover:bg-[white] hover:text-[black] transition-colors">
             Shop Now
           </button>
         </div>
