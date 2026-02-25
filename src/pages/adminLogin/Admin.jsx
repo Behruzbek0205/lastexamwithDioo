@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { AiOutlineSave } from "react-icons/ai";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom"; // Navigatsiya uchun
+import { useNavigate } from "react-router-dom"; 
 import { addAdmin } from "../../redux/adminRedux";
 
 const Admin = () => {
@@ -22,10 +22,8 @@ const Admin = () => {
             return;
         }
 
-        // Reduxga saqlash
         dispatch(addAdmin({ firstname, lastname, email, password, number }));
 
-        // AdminPage sahifasiga o'tish
         navigate("/adminPage");
     };
 
