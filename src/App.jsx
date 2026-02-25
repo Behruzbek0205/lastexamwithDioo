@@ -16,6 +16,7 @@ import Step from "./pages/step/Step";
 import Update from "./pages/update/Update";
 import AdminLog from "./pages/adminLog/AdminLog";
 import Admin from "./pages/adminLogin/Admin";
+import AdminPage from "./pages/adminPage/AdminPage";
 
 const App = () => {
   const [ulanish, setUlanish] = useState(false);
@@ -41,7 +42,7 @@ const App = () => {
         <Route path="/update/:id" element={<Update />} />
         <Route path="/adminLog" element={<AdminLog />} />
         <Route path="/admin" element={<Admin />} />
-
+        <Route path="/adminPage" element={<AdminPage/>}/>
       </Routes>
       <Footer />
     </div>

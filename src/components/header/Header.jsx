@@ -61,7 +61,8 @@ const Header = () => {
           </div>
 
           <Link to="/adminLog" className="hidden sm:block">
-            <button className="px-5 py-2.5 bg-black text-white rounded-xl text-sm font-semibold">
+            <button className="px-5 py-2.5 bg-black text-white rounded-xl text-sm font-semibold transition-all duration-300 
+                                hover:bg-[#EDEDED] hover:text-black hover:shadow-xl active:scale-95">
               About Admin
             </button>
           </Link>
