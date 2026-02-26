@@ -48,9 +48,9 @@ const Card = () => {
                 onClick={() => handleWish(item)}
               >
                 {wish.some((q) => q.id === item.id) ? (
-                  <BsCart3 className="text-blue-600 text-[26px]" /> 
+                  <BsCart3 className="text-blue-600 text-[26px]" />
                 ) : (
-                  <BsCart3 className="text-[#B5B5B5] text-[26px]" /> 
+                  <BsCart3 className="text-[#B5B5B5] text-[26px]" />
                 )}
               </div>
               <div
@@ -79,7 +79,12 @@ const Card = () => {
             </span>
 
             <Link to="/gadjets">
-              <button className="px-10 sm:px-14 py-3 bg-black text-white rounded-lg text-sm sm:text-base transition-all duration-300 hover:bg-[#333] hover:shadow-xl active:scale-95">
+              <button className="px-15 sm:px-14 py-3 
+    bg-black text-white rounded-lg 
+       text-sm sm:text-base 
+      transition-all duration-300 
+  hover:bg-[#EDEDED] hover:text-black 
+hover:-translate-y-1 hover:shadow-xl">
                 Buy Now
               </button>
             </Link>

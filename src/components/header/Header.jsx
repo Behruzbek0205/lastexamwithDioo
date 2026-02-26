@@ -10,6 +10,7 @@ import { useSelector } from "react-redux";
 const Header = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const liked = useSelector((state) => state.liked.value);
+  const wish = useSelector((state) => state.wish.value);
 
   return (
     <header className="max-w-[1440px] mx-auto bg-white">
@@ -52,7 +53,12 @@ const Header = () => {
               )}
               <FaRegHeart className="text-2xl group-hover:text-red-600 transition-colors" />
             </Link>
-            <Link to="/wishlist" className="hover:opacity-60 transition-opacity">
+            <Link to="/wishlist" className="hover:opacity-60 transition-opacity relative">
+              {wish.length > 0 && (
+                <span className="w-4 h-4 rounded-full bg-red-600 absolute -top-2 -right-2 text-[10px] flex items-center justify-center text-white font-bold">
+                  {wish.length}
+                </span>
+              )}
               <BsCart3 className="text-2xl" />
             </Link>
             <Link to="/about" className="hover:opacity-60 transition-opacity">

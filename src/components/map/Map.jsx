@@ -43,8 +43,15 @@ const Map = () => {
             <div
               className="w-full flex justify-between items-center cursor-pointer text-[26px]"
             >
-              <div className="icon w-9 h-9  flex items-center justify-center ">
-                <BsCart3 className="text-2xl " />
+              <div
+                className="cursor-pointer"
+                onClick={() => handleWish(item)}
+              >
+                {wish.some((q) => q.id === item.id) ? (
+                  <BsCart3 className="text-blue-600 text-[26px]" />
+                ) : (
+                  <BsCart3 className="text-[#B5B5B5] text-[26px]" />
+                )}
               </div>
               <div className="liked" onClick={() => handleLike(item)}>
                 {liked.some((q) => q.id === item.id) ? (
