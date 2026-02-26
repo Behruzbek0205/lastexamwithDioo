@@ -19,11 +19,11 @@ import Admin from "./pages/adminLogin/Admin";
 import AdminPage from "./pages/adminPage/AdminPage";
 
 const App = () => {
-  const [ulanish, setUlanish] = useState(false);
+  // const [ulanish, setUlanish] = useState(false);
 
-  if (!ulanish) {
-    return <Form onLogin={() => setUlanish(true)} />;
-  }
+  // if (!ulanish) {
+  //   return <Form onLogin={() => setUlanish(true)} />;
+  // }
   return (
     <div>
       <Header />
