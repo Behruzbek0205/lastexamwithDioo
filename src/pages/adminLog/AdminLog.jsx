@@ -24,7 +24,7 @@ const AdminLog = () => {
 
         toast.success("Muvaffaqiyatli to'landi! Endi siz adminsiz ", {
             position: "top-right",
-            autoClose: 1000,
+            autoClose: 500,
             onClose: () => navigate("/admin")
         });
     };

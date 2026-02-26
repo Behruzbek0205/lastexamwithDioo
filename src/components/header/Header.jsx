@@ -52,7 +52,7 @@ const Header = () => {
               )}
               <FaRegHeart className="text-2xl group-hover:text-red-600 transition-colors" />
             </Link>
-            <Link to="/" className="hover:opacity-60 transition-opacity">
+            <Link to="/wishlist" className="hover:opacity-60 transition-opacity">
               <BsCart3 className="text-2xl" />
             </Link>
             <Link to="/about" className="hover:opacity-60 transition-opacity">

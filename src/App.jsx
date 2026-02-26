@@ -17,6 +17,7 @@ import Update from "./pages/update/Update";
 import AdminLog from "./pages/adminLog/AdminLog";
 import Admin from "./pages/adminLogin/Admin";
 import AdminPage from "./pages/adminPage/AdminPage";
+import Wishlist from "./pages/wishlist/Wishlist";
 
 const App = () => {
   // const [ulanish, setUlanish] = useState(false);
@@ -43,6 +44,7 @@ const App = () => {
         <Route path="/adminLog" element={<AdminLog />} />
         <Route path="/admin" element={<Admin />} />
         <Route path="/adminPage" element={<AdminPage/>}/>
+        <Route path="/wishlist" element={<Wishlist/>}/>
       </Routes>
       <Footer />
     </div>

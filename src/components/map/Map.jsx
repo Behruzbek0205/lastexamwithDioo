@@ -4,16 +4,26 @@ import { Link } from "react-router-dom";
 import { FaHeart } from "react-icons/fa";
 import { useDispatch, useSelector } from "react-redux";
 import { addLiked, deleteLiked } from "../../redux/likedRedux";
+import { BsCart3 } from "react-icons/bs";
+import { addWish, deleteWish } from "../../redux/wishlistRedux";
 
 const Map = () => {
   const dispatch = useDispatch();
   const liked = useSelector((state) => state.liked.value);
+  const wish = useSelector((state) => state.wish.value);
 
   const handleLike = (item) => {
     if (liked.some((q) => q.id === item.id)) {
       dispatch(deleteLiked(item.id));
     } else {
       dispatch(addLiked(item));
+    }
+  };
+  const handleWish = (item) => {
+    if (wish.some((q) => q.id === item.id)) {
+      dispatch(deleteWish(item.id));
+    } else {
+      dispatch(addWish(item));
     }
   };
 
@@ -31,14 +41,18 @@ const Map = () => {
             className="w-full bg-[#F6F6F6] rounded-[9px] p-4 flex flex-col items-center gap-4"
           >
             <div
-              className="w-full flex justify-end cursor-pointer text-[26px]"
-              onClick={() => handleLike(item)}
+              className="w-full flex justify-between items-center cursor-pointer text-[26px]"
             >
-              {liked.some((q) => q.id === item.id) ? (
-                <FaHeart className="text-red-500" />
-              ) : (
-                <FaHeart className="text-[#B5B5B5]" />
-              )}
+              <div className="icon w-9 h-9  flex items-center justify-center ">
+                <BsCart3 className="text-2xl " />
+              </div>
+              <div className="liked" onClick={() => handleLike(item)}>
+                {liked.some((q) => q.id === item.id) ? (
+                  <FaHeart className="text-red-500" />
+                ) : (
+                  <FaHeart className="text-[#B5B5B5]" />
+                )}
+              </div>
             </div>
             <Link to="/apple">
               <img

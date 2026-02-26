@@ -3,7 +3,7 @@ import { AiOutlineDelete, AiOutlineMail, AiOutlineUser, AiOutlinePhone, AiOutlin
 import { GrEdit } from "react-icons/gr";
 import { useDispatch, useSelector } from "react-redux";
 import { Link } from "react-router-dom";
-import { deleteAdmin, updateLogin } from "../../redux/adminRedux"; 
+import { deleteAdmin, updateLogin } from "../../redux/adminRedux";
 
 const AdminPage = () => {
     const admin = useSelector((state) => state.admin.value);
@@ -32,17 +32,13 @@ const AdminPage = () => {
     return (
         <div className="bg-[#f0f2f5] min-h-screen py-12 px-6 relative">
             <div className="max-w-7xl mx-auto">
-                <div className="flex flex-col md:flex-row justify-between items-center mb-12 gap-6">
-                    <div>
-                        <h1 className="text-4xl font-black text-gray-900 tracking-tight">Admin Management</h1>
-                        <p className="text-gray-500 mt-1 font-medium">Tizimdagi administratorlarni shu yerning o'zida boshqaring</p>
+                <div className="flex flex-col md:flex-row justify-center items-center mb-12 gap-6 w-full">
+                    <div className="text-center">
+                        <h1 className="text-4xl md:text-5xl font-black text-gray-900">
+                            Admin Management
+                        </h1>
                     </div>
-                    <Link to="/admin" className="flex items-center gap-2 bg-black text-white px-8 py-4 rounded-2xl font-bold hover:shadow-2xl transition-all">
-                        <AiOutlinePlus size={20} /> Add New Admin
-                    </Link>
                 </div>
-
-                {/* Kartalar ro'yxati */}
                 <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-8">
                     {admin && admin.length > 0 ? (
                         admin.map((item) => (
