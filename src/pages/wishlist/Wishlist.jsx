@@ -17,7 +17,7 @@ const Wishlist = () => {
             <hr className="text-[#B5B5B5]" />
 
             <h1 className="flex items-center justify-center inter font-medium text-2xl sm:text-3xl md:text-[40px] mt-6 md:mt-10 px-4">
-                Liked Products
+                Wished Products
             </h1>
 
             <div className="card grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 md:gap-6 lg:gap-8 px-4 sm:px-6 md:px-10 lg:px-20 py-6 md:py-10">

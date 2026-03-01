@@ -28,17 +28,27 @@ import { useDispatch, useSelector } from "react-redux";
 import { addCart } from "../../redux/userCart";
 import { Dataaa } from "../../alldata/apple";
 import { addLiked, deleteLiked } from "../../redux/likedRedux";
+import { addWish, deleteWish } from "../../redux/wishlistRedux";
+import { BsCart3 } from "react-icons/bs";
 
 const Information = () => {
   const { id } = useParams();
   const dispatch = useDispatch();
   const liked = useSelector((state) => state.liked.value);
+  const wish = useSelector((state) => state.wish.value);
 
   const handleLike = (item) => {
     if (liked.some((q) => q.id === item.id)) {
       dispatch(deleteLiked(item.id));
     } else {
       dispatch(addLiked(item));
+    }
+  };
+  const handleWish = (item) => {
+    if (wish.some((q) => q.id === item.id)) {
+      dispatch(deleteWish(item.id));
+    } else {
+      dispatch(addWish(item));
     }
   };
 
@@ -58,7 +68,8 @@ const Information = () => {
   }
 
   const data = dataFromDataa || dataFromData;
-  const dataa = dataFromData || dataFromDataa;
+  // const dataaфв
+  //  = dataFromData || dataFromDataa;
 
   return (
     <div className="">
@@ -138,7 +149,7 @@ const Information = () => {
             </div>
             <div className="w-full h-16 rounded-[7px] bg-[#F4F4F4] flex justify-center items-center gap-2 md:gap-3 px-2">
               <HiMiniCpuChip className="text-2xl md:text-[28px]" />
-              <div className="text flex flex-col text-sm md:text-[18px] text-[#4E4E4E] font-normal">
+              <div className="text flex flex-col text-sm md:text-[16px] text-[#4E4E4E] font-normal">
                 <p>CPU</p>
                 <span className="text-[#000000] text-xs md:text-[16px]">
                   Apple A16 Bionic
@@ -149,7 +160,7 @@ const Information = () => {
               <GoCpu className="text-2xl md:text-[28px]" />
               <div className="text flex flex-col text-sm md:text-[16px] text-[#4E4E4E] font-normal">
                 <p>Number of Cores</p>
-                <span className="text-[#000000] text-base md:text-[18px]">
+                <span className="text-[#000000] text-base md:text-[16px]">
                   6
                 </span>
               </div>
@@ -170,7 +181,7 @@ const Information = () => {
             </div>
             <div className="w-full h-16 rounded-[7px] bg-[#F4F4F4] flex justify-center items-center gap-2 md:gap-3 px-2">
               <GiBattery75 className="text-2xl md:text-[28px]" />
-              <div className="text flex flex-col text-sm md:text-[18px] text-[#4E4E4E] font-normal">
+              <div className="text flex flex-col text-sm md:text-[16px] text-[#4E4E4E] font-normal">
                 <h3>Battery capacity</h3>
                 <span className="text-[#000000]">4323 mAh</span>
               </div>
@@ -185,15 +196,18 @@ const Information = () => {
           </p>
 
           <div className="btn flex flex-col sm:flex-row gap-4 mt-8">
-            <button className="border rounded-md border-[black] text-base md:text-[18px] px-12 md:px-18 py-3 md:py-4">
-              Add to Wishlist
-            </button>
+            <div onClick={() => handleWish(data)}>
+              <button className="border rounded-md border-[black] cursor-pointer text-base md:text-[18px] px-12 md:px-18 py-3 md:py-4">
+                Add to Wishlist
+              </button>
+            </div>
+
             <Link to="/apply">
               <button
-                className="bg-[#000000] text-[white] text-base md:text-[18px] px-12 md:px-18 py-3 md:py-4 rounded-md w-full sm:w-auto"
-                onClick={() => handleItem(dataa)}
+                className="bg-[#000000] text-white cursor-pointer text-base md:text-[18px] px-12 md:px-18 py-3 md:py-4 rounded-md w-full sm:w-auto"
+                onClick={() => handleItem(data)}
               >
-                Add to Card
+                Add to Cart
               </button>
             </Link>
           </div>
@@ -490,47 +504,65 @@ const Information = () => {
             Discounts up to -50%
           </h3></center>
         </div>
-        <div className="w-full max-w-[1120px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
-          {Iphone.map((item, index) => (
-            <div
-              key={index}
-              className="w-full bg-[#F6F6F6] rounded-[9px] p-4 flex flex-col items-center gap-4"
-            >
+        <div className="max-w-[1521px] w-full px-4 md:px-6 lg:px-20 py-8">
+          <div className="mb-6 md:mb-10">
+            <h3 className="font-medium text-xl md:text-[24px] ml-30">
+              Discounts up to -50%
+            </h3>
+          </div>
+          <div className="w-full max-w-[1120px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-5">
+            {Iphone.map((item, index) => (
               <div
-                className="w-full flex justify-end cursor-pointer text-[26px]"
-                onClick={() => handleLike(item)}
+                key={index}
+                className="w-full bg-[#F6F6F6] rounded-[9px] p-4 flex flex-col items-center gap-4"
               >
-                {liked.some((q) => q.id === item.id) ? (
-                  <FaHeart className="text-red-500" />
-                ) : (
-                  <FaHeart className="text-[#B5B5B5]" />
-                )}
+                <div
+                  className="w-full flex justify-between items-center cursor-pointer text-[26px]"
+                >
+                  <div
+                    className="cursor-pointer"
+                    onClick={() => handleWish(item)}
+                  >
+                    {wish.some((q) => q.id === item.id) ? (
+                      <BsCart3 className="text-blue-600 text-[26px]" />
+                    ) : (
+                      <BsCart3 className="text-[#B5B5B5] text-[26px]" />
+                    )}
+                  </div>
+                  <div className="liked" onClick={() => handleLike(item)}>
+                    {liked.some((q) => q.id === item.id) ? (
+                      <FaHeart className="text-red-500" />
+                    ) : (
+                      <FaHeart className="text-[#B5B5B5]" />
+                    )}
+                  </div>
+                </div>
+                <Link to="/apple">
+                  <img
+                    src={item.image}
+                    alt="iPhone"
+                    className="max-w-full h-40 sm:h-48 object-contain"
+                  />
+                </Link>
+                <p className="w-full text-center font-medium text-[16px] sm:text-[17px] md:text-[18px] px-2">
+                  {item.text}
+                </p>
+                <span className="text-lg md:text-[22px] font-semibold">
+                  ${item.price}
+                </span>
+                <Link to="/apple">
+                  <button className="px-15 sm:px-14 py-3 
+            bg-black text-white rounded-lg 
+               text-sm sm:text-base 
+              transition-all duration-300 
+          hover:bg-[#EDEDED] hover:text-black 
+        hover:-translate-y-1 hover:shadow-xl">
+                    Buy Now
+                  </button>
+                </Link>
               </div>
-              <Link to="/apple">
-                <img
-                  src={item.image}
-                  alt="iPhone"
-                  className="max-w-full h-40 sm:h-48 object-contain"
-                />
-              </Link>
-              <p className="w-full text-center font-medium text-[16px] sm:text-[17px] md:text-[18px] px-2">
-                {item.text}
-              </p>
-              <span className="text-lg md:text-[22px] font-semibold">
-                ${item.price}
-              </span>
-              <Link to="/apple">
-                <button className="px-15 sm:px-14 py-3 
-    bg-black text-white rounded-lg 
-       text-sm sm:text-base 
-      transition-all duration-300 
-  hover:bg-[#EDEDED] hover:text-black 
-hover:-translate-y-1 hover:shadow-xl">
-                  Buy Now
-                </button>
-              </Link>
-            </div>
-          ))}
+            ))}
+          </div>
         </div>
       </div>
     </div>

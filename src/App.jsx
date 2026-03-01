@@ -20,11 +20,11 @@ import AdminPage from "./pages/adminPage/AdminPage";
 import Wishlist from "./pages/wishlist/Wishlist";
 
 const App = () => {
-  const [ulanish, setUlanish] = useState(false);
+  // const [ulanish, setUlanish] = useState(false);
 
-  if (!ulanish) {
-    return <Form onLogin={() => setUlanish(true)} />;
-  }
+  // if (!ulanish) {
+  //   return <Form onLogin={() => setUlanish(true)} />;
+  // }
   return (
     <div>
       <Header />

@@ -2,8 +2,8 @@ import React from "react";
 import { CiLocationOn } from "react-icons/ci";
 import { FaDollyFlatbed } from "react-icons/fa";
 import { MdEdit, MdOutlinePayment } from "react-icons/md";
-import line from "../../assets/line.svg";
 import { Link } from "react-router-dom";
+import Plus from "../../assets/Plus.svg"
 
 const Step = () => {
   return (
@@ -68,7 +68,7 @@ const Step = () => {
                   2118 Thornridge Cir. Syracuse, Connecticut 35624
                 </p>
                 <div className="flex items-center gap-4 text-[16px] md:text-[18px]">
-                  <MdEdit  />
+                  <MdEdit />
                   <span className="font-bold">X</span>
                 </div>
               </div>
@@ -107,9 +107,16 @@ const Step = () => {
           </div>
         </div>
 
-        <div className="svg mt-12 w-full flex justify-center overflow-hidden">
-          <img src={line} alt="" className="w-full max-w-full object-cover" />
+        <div className="svg mt-12 w-full flex justify-center">
+          <div className="w-full max-w-[1402px] border-b-2 border-dashed flex justify-center">
+            <span className="relative top-[18px]">
+              <img src={Plus} className="z-50 w-10 h-10" alt="plus" />
+            </span>
+          </div>
         </div>
+        <center>
+          <p className="mt-5">Add New Address</p>
+        </center>
         <div className="btn flex flex-col-reverse sm:flex-row justify-end gap-3 mt-10">
           <button className="w-full sm:w-auto border border-gray-300 rounded-md px-8 py-3 md:px-16 md:py-4 ">
             Back
